@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require 'open-uri'
 require 'json'
 
+# Heredamos de application controller
 class GamesController < ApplicationController
   def new
     @grid = []
@@ -13,7 +16,7 @@ class GamesController < ApplicationController
     @valid_word = valid_word?(@grid, @attempt)
     @english_word = english_word?(@attempt)
     @score = 0
-    @score = @attempt.length * 70 if (@valid_word && @english_word)
+    @score = @attempt.length * 70 if @valid_word && @english_word
   end
 
   private
@@ -27,7 +30,7 @@ class GamesController < ApplicationController
         return false
       end
     end
-    return true
+    true
   end
 
   def english_word?(attempt)

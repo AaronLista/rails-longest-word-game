@@ -1,15 +1,12 @@
 <div class="container">
-
-  <div class="row mt-5 mb-5">
-    <% @grid.each do |letter| %>
-      <div class="col">
-        <div class="card bg-primary" style="width: 5rem;">
-          <p class="text-center fs-2" style="color: #fff;">
-            <%= letter %>
-          </p>
-        </div>
-      </div>
-    <% end %>
+  <div class="d-flex justify-content-center w-100 my-3">
+    <ul class="list-group list-group-flush list-group-horizontal">
+      <% @grid.each do |letter| %>
+        <li class="list-group-item fs-1 bg-primary text-white mx-3">
+          <%= letter %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <form action="score" method="POST" data-turbo="false">
