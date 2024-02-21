@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row mt-5 mb-5">
+    <% @grid.each do |letter| %>
+      <div class="col">
+        <div class="card bg-primary" style="width: 5rem;">
+          <p class="text-center fs-2" style="color: #fff;">
+            <%= letter %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <h2 class="text-center fs-2">Your word: <%= @attempt %></h2>
+  <h2 class="text-center fs-2">Your Score: <%= @score %></h2>
+
+  <% unless @valid_word %>
+    <div class="alert alert-danger" role="alert">
+      Your word it's not in the grid
+    </div>
+  <% end %>
+
+  <% unless @english_word %>
+    <div class="alert alert-danger" role="alert">
+      Your word it's not valid
+    </div>
+  <% end %>
+
+  <%= link_to "Try again", new_path %>
+</div>
